@@ -1,0 +1,146 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+header{
+  width: 90vw;
+  margin-inline: auto;
+  height: 15vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  background-color: #333;
+  padding: 0 20px;
+}
+#btn{
+  width: 100px;
+  height: 40px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  background: #fff;
+  color: #333;
+  border: none;
+  transition: 0.3s;
+}
+#btn:hover{
+  background-color: #fee440;
+  color: #333;
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.7);
+  letter-spacing: 0.8px;
+}
+.main-container{
+  display: flex;
+  justify-content: center;
+}
+.stadium {
+  background-image: url('./src/assets/img/stadium_background.webp');
+  background-size: cover; 
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 700px;
+  height: 80vh;
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(4, 1fr); 
+  grid-template-rows: repeat(4, 1fr);
+  padding: 20px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+}
+  
+.player-card {
+  width: 80px;
+  height: 100px;
+  background-color: #fff;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  border-radius: 2px;
+}
+.player-card p {
+  font-size: 12px;
+  color: #333;
+}
+.player-card img{
+  object-fit: fit-content;
+  width: 100%;
+  height: 100%;
+}
+.goalkeeper {
+  grid-row: 4;
+  grid-column: 3;
+}
+
+.left-back {
+  grid-row: 3;
+  grid-column: 1;
+  position: relative;
+  left: 10px;
+  bottom: 20px;
+}
+
+.center-back1 {
+  grid-row: 3;
+  grid-column: 2;
+  position: relative;
+  top: 50px;
+}
+
+.center-back2 {
+  grid-row: 3;
+  grid-column: 4;
+  position: relative;
+  top: 50px;
+}
+
+.right-back {
+  grid-row: 3;
+  grid-column: 5;
+  position: relative;
+  right: 10px;
+  bottom: 20px;
+}
+
+.enter-mid1 {
+  grid-row: 2;
+  grid-column: 1;
+  position: relative;
+  left: 50px;
+}
+
+.enter-mid2 {
+  grid-row: 2;
+  grid-column: 3;
+  position: relative;
+  top: 80px;
+}
+
+.enter-mid3 {
+  grid-row: 2;
+  grid-column: 5;
+  position: relative;
+  right: 50px;
+}
+
+.left-wing {
+  grid-row: 1;
+  grid-column: 2;
+  position: relative;
+  top: 20px;
+}
+
+.striker {
+  grid-row: 1;
+  grid-column: 3;
+
+}
+
+.right-wing {
+  grid-row: 1;
+  grid-column: 4;
+  position: relative;
+  top: 20px;
+
+}

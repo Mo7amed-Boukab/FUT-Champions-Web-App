@@ -1,28 +1,46 @@
 *{
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
-
-header{
-  width: 90vw;
-  margin-inline: auto;
-  height: 15vh;
+.container{
   display: flex;
-  justify-content: space-between;
+  width: 80%;
+  margin-inline: auto;
+}
+aside{
+  height: 100vh;
+  width: 30%;
+  background: #333;
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  gap: 20px;
+}
+.buttons{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 50%;
+}
+h1{
+  font-size: 2rem;
+  color: #fee440;
+  margin-top: 50px;
+  height: 30%;
+}
+h1 span{
   color: #fff;
-  background-color: #333;
-  padding: 0 20px;
 }
 #btn{
-  width: 100px;
-  height: 40px;
-  padding: 5px 10px;
+  width: 140px;
+  height:40px;
+  padding: 6px 12px;
   border-radius: 4px;
   background: #fff;
   color: #333;
   border: none;
-  transition: 0.3s;
+  transition: 0.3s ease;
 }
 #btn:hover{
   background-color: #fee440;
@@ -31,16 +49,14 @@ header{
   letter-spacing: 0.8px;
 }
 .main-container{
-  display: flex;
-  justify-content: center;
+   width: 70%;
+   height: 100vh;
 }
 .stadium {
   background-image: url('./src/assets/img/stadium_background.webp');
   background-size: cover; 
   background-position: center;
   background-repeat: no-repeat;
-  width: 700px;
-  height: 80vh;
   display: grid;
   gap: 30px;
   grid-template-columns: repeat(4, 1fr); 
@@ -48,25 +64,83 @@ header{
   padding: 20px; 
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
   border-radius: 4px;
+  height: 100%;
 }
-  
+
 .player-card {
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
   width: 80px;
-  height: 100px;
-  background-color: #fff;
+  height: 110px;
+  background-color: #d4e09b;
   text-align: center;
   display: flex;
   flex-direction: column;
-  border-radius: 2px;
+  border-radius: 5px;
+  padding: 2px;
+  position: relative;
+  transition: transform 0.5s ease;
+}
+
+.player-card:hover {
+  transform: scale(1.2);
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.5);
 }
 .player-card p {
   font-size: 12px;
   color: #333;
 }
 .player-card img{
-  object-fit: fit-content;
+  object-fit: cover;
   width: 100%;
   height: 100%;
+}
+.rate {
+  font-size: 9px;
+  font-weight: 700;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+}
+
+.position {
+  font-size: 9px;
+  font-weight: 700;
+  position: absolute;
+  top: 3px;
+  right: 3px;
+}
+
+.player-photo img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-top: 3px;
+}
+
+.player-name {
+  font-size: 8px;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+.statistique {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2px;
+}
+
+.stat {
+  font-size: 6px;
+  font-weight: 700;
+  background: #fff;
+  padding: 2px;
+  border-radius: 2px;
+}
+
+.stat span {
+  font-size: 5px;
+  font-weight: 500;
+  color: #555;
 }
 .goalkeeper {
   grid-row: 4;
@@ -143,4 +217,162 @@ header{
   position: relative;
   top: 20px;
 
+}
+
+/*------------------------------------- Responsive max-width: 1024px */
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column-reverse; 
+    width: 100%;
+    height: 100vh;
+  }
+  aside {
+    width: 90%;
+    height: 15vh;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: auto;
+  }
+  .buttons{
+    flex-direction: row;
+    align-items: center;
+  }
+  h1{
+    margin: 0;
+  }
+  .main-container{
+    width: 90%;
+    height: 100vh;
+    margin: 0 auto;
+ }
+ #btn{
+  width: 120px;
+  height:35px;
+  padding: 5px 10px;
+}
+}
+
+
+@media (max-width: 768px) {
+  aside {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    width: 100vw;
+    height: 15vh;
+    margin: 0;
+  }
+  h1 {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+  .buttons {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+  }
+  #btn {
+    width: 100px;
+    font-size: 0.8rem;
+  }
+  .player-card {
+    width: 70px; 
+    height: 90px;
+  }
+  .player-card p {
+    font-size: 10px;
+  }
+  .main-container{
+    width: 100%;
+    height: 85vh;
+ }
+}
+
+/*------------------------------------- Responsive max-width: 480px */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+  #btn {
+    width: 90px;
+    font-size: 0.7rem;
+  }
+  .player-card {
+    width: 45px; 
+    height: 65px;
+  }
+  .player-card img {
+    height: 80%; 
+  }
+}
+
+
+
+/*----------------- Responsive for cart ------------------*/
+
+@media (max-width: 1024px) {
+  .player-card {
+    width: 70px;
+    height: 100px;
+  }
+  .rate, .position {
+    font-size: 8px;
+  }
+  .player-photo img {
+    width: 40px;
+    height: 40px;
+  }
+  .player-name {
+    font-size: 7px;
+  }
+  .stat {
+    font-size: 5px;
+  }
+  .stat span {
+    font-size: 4px;
+  }
+}
+
+@media (max-width: 768px) {
+  .player-card {
+    width: 60px;
+    height: 90px;
+  }
+  .rate, .position {
+    font-size: 7px;
+  }
+  .player-photo img {
+    width: 35px;
+    height: 35px;
+  }
+  .player-name {
+    font-size: 6px;
+  }
+  .stat {
+    font-size: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .player-card {
+    width: 50px;
+    height: 80px;
+  }
+  .rate, .position {
+    font-size: 6px;
+  }
+  .player-photo img {
+    width: 30px;
+    height: 30px;
+  }
+  .player-name {
+    font-size: 5px;
+  }
+  .stat {
+    font-size: 4px;
+  }
+  .stat span {
+    font-size: 3px;
+  }
 }

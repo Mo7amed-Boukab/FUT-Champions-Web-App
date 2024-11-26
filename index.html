@@ -7,15 +7,24 @@
   <title>FUT APP</title>
 </head>
 <body>
-    <header>
-      <h1>FUT APP</h1>
-      <button id="btn">Add player</button>
-    </header>
+  <div class="container">
     <div class="main-container">
       <main  class="stadium">
         <div class="player-card goalkeeper">
-          <img src="./src/assets/img/goalkeeper.jpg" alt="">
-          <p class="player-position">GK</p>
+          <div class="rate">185</div>
+          <div class="position">GK</div>
+          <div class="player-photo">
+            <img src="./src/assets/img/goalkeeper.jpg" alt="Yassin Bonu">
+          </div>
+          <div class="player-name">Yassin Bonu</div>
+          <div class="statistique">
+            <div class="stat">86 <span>VIT</span></div>
+            <div class="stat">82 <span>TIR</span></div>
+            <div class="stat">75 <span>PAS</span></div>
+            <div class="stat">84 <span>DRI</span></div>
+            <div class="stat">34 <span>DEF</span></div>
+            <div class="stat">76 <span>PHY</span></div>
+          </div>
         </div>
         <div class="player-card center-back1">
           <img src="./src/assets/img/goalkeeper.jpg" alt="">
@@ -61,7 +70,19 @@
       </main>
     </div>
 
-    </div>
+    <aside>
+      <h1><span>EA</span> FC 25</h1>
+
+      <div class="buttons">
+        <button id="btn">Add player</button>
+        <button id="btn">Edit</button>
+        <button id="btn">Remove</button>
+      </div>
+        
+    </aside>
+  </div>
+  
   
 </body>
 </html>
+

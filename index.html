@@ -1,88 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <title>FUT APP</title>
-</head>
-<body>
-  <div class="container">
-    <div class="main-container">
-      <main  class="stadium">
-        <div class="player-card goalkeeper">
-          <div class="rate">185</div>
-          <div class="position">GK</div>
-          <div class="player-photo">
-            <img src="./src/assets/img/goalkeeper.jpg" alt="Yassin Bonu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>FUT APP</title>
+  </head>
+  <body>
+  <div class="container-perent">
+    <div class="container">
+      <div class="main-container">
+        <main class="stadium">
+          <div class="player-card goalkeeper" data-pos="GK">
+          
           </div>
-          <div class="player-name">Yassin Bonu</div>
-          <div class="statistique">
-            <div class="stat">86 <span>VIT</span></div>
-            <div class="stat">82 <span>TIR</span></div>
-            <div class="stat">75 <span>PAS</span></div>
-            <div class="stat">84 <span>DRI</span></div>
-            <div class="stat">34 <span>DEF</span></div>
-            <div class="stat">76 <span>PHY</span></div>
+          <div class="player-card center-back1" data-pos="CB">
+          
           </div>
-        </div>
-        <div class="player-card center-back1">
-          <img src="./src/assets/img/goalkeeper.jpg" alt="">
-          <p class="player-position">CB</p>
-        </div>
-        <div class="player-card center-back2">
-          <img src="./src/assets/img/goalkeeper.jpg" alt="">
-          <p class="player-position">CB</p>
-        </div>
-        <div class="player-card left-back">
-          <img src="./src/assets/img/goalkeeper.jpg" alt="">
-          <p class="player-position">LB</p>
-        </div>
-        <div class="player-card right-back">
-          <img src="./src/assets/img/goalkeeper.jpg" alt="">
-          <p class="player-position">RB</p>
-        </div>
-        <div class="player-card enter-mid1">
-          <img src="./src/assets/img/goalkeeper.jpg" alt="">
-          <p class="player-position">CM</p>
-        </div>
-        <div class="player-card enter-mid2">
-          <img src="./src/assets/img/goalkeeper.jpg" alt="">
-          <p class="player-position">CM</p>
-        </div>
-        <div class="player-card enter-mid3">
-          <img src="./src/assets/img/goalkeeper.jpg" alt="">
-          <p class="player-position">CM</p>
-        </div>
-        <div class="player-card left-wing">
-          <img src="./src/assets/img/goalkeeper.jpg" alt="">
-          <p class="player-position">LW</p>
-        </div>
-        <div class="player-card right-wing">
-          <img src="./src/assets/img/goalkeeper.jpg" alt="">
-          <p class="player-position">RW</p>
-        </div>
-        <div class="player-card striker">
-          <img src="./src/assets/img/goalkeeper.jpg" alt="">
-          <p class="player-position">ST</p>
-        </div>
+          <div class="player-card center-back2" data-pos="CB">
+          
+          </div>
+  
+          <div class="player-card left-back" data-pos="LB">
+          
+          </div>
+          <div class="player-card right-back" data-pos="RB">
+          
+          </div>
+          <div class="player-card enter-mid1" data-pos="CM">
+          
+          </div>
+          <div class="player-card enter-mid2" data-pos="CM">
+            
+          </div>
+          <div class="player-card enter-mid3" data-pos="CM">
+          
+          </div>
+          <div class="player-card left-wing" data-pos="LW">
+          
+          </div>
+          <div class="player-card right-wing" data-pos="RW">
+          
+          </div>
+          <div class="player-card striker" data-pos="ST">
+          
+          </div>
       
-      </main>
-    </div>
-
-    <aside>
-      <h1><span>EA</span> FC 25</h1>
-
-      <div class="buttons">
-        <button id="btn">Add player</button>
-        <button id="btn">Edit</button>
-        <button id="btn">Remove</button>
+        </main>
       </div>
-        
-    </aside>
-  </div>
-  
-  
-</body>
-</html>
 
+      <aside>
+        <h1><span>EA</span> FC 25</h1>
+
+        <div class="btns-SideBar">
+          <button class="btn add" >Add player</button>
+          <button class="btn">Edit</button>
+          <button class="btn">Remove</button>
+          <button class="btn">List Players</button>
+          <select class="btn" style="text-align: center;">
+            <option  disabled selected>Tactic</option>
+            <option >4 - 3 - 3</option>
+            <option >4 - 2 - 2</option>
+          </select>
+        </div>
+      </aside>
+
+    </div>
+  </div> 
+  
+    <div class="form-container">
+      <form >
+        <h2 >Add Data Form</h2>
+        <div class="input-container">
+          <input type="text" placeholder="Player name" id="playerName" />  
+        </div>
+  
+        <div class="input-container">
+          <select  id="pos">
+            <option  disabled selected>Position</option>
+            <option value="GK">GK</option>
+            <option value="CB">CB</option>
+            <option value="CB">CB</option>
+            <option value="LB">LB</option>
+            <option value="RB">RB</option>
+            <option value="CM">CM</option>
+            <option value="CM">CM</option>
+            <option value="CM">CM</option>
+            <option value="LW">LW</option>
+            <option value="RW">RW</option>
+            <option value="ST">ST</option>
+          </select>
+        </div>
+        <div id="containerOptions">    
+        </div>
+    
+        <div class="input-container">
+            <input type="number" placeholder="Rating" id="Rating"/>
+        </div>
+        <div class="input-container">
+            <input type="text" placeholder="Player image ( URL )" id="playerImage"/>
+        </div>
+   
+        <div class="button-container">
+          <button id="addPlayerBtn"> Add Player </button>
+        </div>
+    </form>  
+    </div>
+    <div class="cartsAdded-container">
+
+    </div>
+    
+    <script src="main.js">
+    </script>
+  </body>
+</html>

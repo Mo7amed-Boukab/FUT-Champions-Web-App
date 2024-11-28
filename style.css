@@ -72,6 +72,15 @@ h1 span {
   border-radius: 4px;
   height: 100%;
 }
+.goalkeeper {
+  grid-row: 4;
+  grid-column: 3;
+}
+
+.left-back {
+  grid-row: 3;
+  grid-column: 1;
+}
 .center-back1 {
   grid-row: 3;
   grid-column: 2;
@@ -131,6 +140,7 @@ h1 span {
   position: relative;
   top: 20px;
 }
+
 /* ------------------------------- cards Players -------------------------------- */
 .player-card {
   box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
@@ -190,7 +200,7 @@ h1 span {
   font-size: 8px;
   font-weight: 700;
   color: #fff;
-  margin-bottom: 2px;
+  margin-bottom: 3px;
 }
 
 .statistique {
@@ -213,15 +223,7 @@ h1 span {
   font-weight: 500;
   color: #d5f2e3;
 }
-.goalkeeper {
-  grid-row: 4;
-  grid-column: 3;
-}
 
-.left-back {
-  grid-row: 3;
-  grid-column: 1;
-}
 .form-container{
   width: 100vw;
   height: 100vh;
@@ -443,3 +445,54 @@ h2{
   /* ------------------------------ */
 }
 
+.listPlayersPage{
+  width: 100vw;
+  height: 100vh;
+  background-image: url('/src/assets/img/football-stadium.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: rgba(0, 0, 0, 0.2);
+  background-blend-mode: darken;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.listPlayers-container{
+  width: 60%;
+  min-height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: rgba(2, 13, 18, 0.8);
+  box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+}
+.title{
+  font-size: 3em;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  color: #4c956c;
+
+}
+.fa-solid{
+  position: absolute;
+  z-index: 1;
+  color: #fff;
+  top: -20px;
+  left: 34px;
+
+}
+.fa-solid:hover {
+  color: darkred;
+  transform: scale(1.5);
+}
+.iconRemove{
+  display: none;
+}

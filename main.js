@@ -340,7 +340,9 @@ addPlayerBtn.addEventListener('click', ()=>{
 
   // -------------------------------------------------------------------
 
+
   let  getData = JSON.parse(localStorage.getItem("playersCards")) || [];
+  
   if (position === 'GK') {
     
       let newData = {
@@ -376,24 +378,264 @@ addPlayerBtn.addEventListener('click', ()=>{
         }
       };
       getData.push(newData);
-    
+      
   }
-  localStorage.setItem("playersCards", JSON.stringify(getData));
+
+
 });
 console.log(JSON.parse(localStorage.getItem("playersCards")));
-// ------------------------------------------------------- 
+console.log(JSON.parse(localStorage.getItem("playersCards")));
+// -------------------------------------------------------  list players in studium
 let playersCard = document.querySelectorAll('.player-card');
 // -------------------------------------------------------
+let aside = document.querySelector('aside');
+let popUp = document.querySelector('.popUp');
+let newArray;
+playersCard.forEach((card) => {
+  card.addEventListener('click', () => {
+    popUp.style.display = 'flex'; 
+    aside.style.display = 'none'; 
+    
+
+    if (card.getAttribute('data-pos') === 'GK') {
+      newArray = getData.filter((element) => element.position === 'GK');
+      popUp.innerHTML= '';
+      newArray.forEach((player) => {
+        
+        let newCard = document.createElement('div'); 
+        newCard.classList.add('player-card'); 
+        console.log(newCard);
+        
+
+        newCard.innerHTML = `
+          <div class="rate">${player.rate}</div>
+          <div class="position">${player.position}</div>
+          <div class="player-photo">
+            <img src="${player.photo}"" alt="" />
+          </div>
+          <div class="player-name">${player.name}</div>
+          <div class="statistique">
+            <div class="stat">${player.stats.DIV} <span>DIV</span></div>
+            <div class="stat">${player.stats.HAN} <span>HAN</span></div>
+            <div class="stat">${player.stats.KIC} <span>KIC</span></div>
+            <div class="stat">${player.stats.REF} <span>REF</span></div>
+            <div class="stat">${player.stats.SPD} <span>SPD</span></div>
+            <div class="stat">${player.stats.POS} <span>POS</span></div>
+          </div>
+        `;
+        popUp.appendChild(newCard); 
+      });
+    }
+    else if (card.getAttribute('data-pos') === 'CB'){
+     popUp.innerHTML = '';
+     newArray = getData.filter((element) => element.position === 'CB');
+     newArray.forEach(player => {
+           
+        let newCard = document.createElement('div'); 
+        newCard.classList.add('player-card'); 
+        console.log(newCard);
+  
+        newCard.innerHTML = `
+          <div class="rate">${player.rate}</div>
+          <div class="position">${player.position}</div>
+          <div class="player-photo">
+            <img src="${player.photo}"" alt="" />
+          </div>
+          <div class="player-name">${player.name}</div>
+          <div class="statistique">
+            <div class="stat">${player.stats.PAC} <span>DIV</span></div>
+            <div class="stat">${player.stats.SHO} <span>HAN</span></div>
+            <div class="stat">${player.stats.PAS} <span>KIC</span></div>
+            <div class="stat">${player.stats.DRI} <span>REF</span></div>
+            <div class="stat">${player.stats.DEF} <span>SPD</span></div>
+            <div class="stat">${player.stats.PHY} <span>POS</span></div>
+          </div>
+        `;
+        popUp.appendChild(newCard);
+     }) 
+    }
+    else if (card.getAttribute('data-pos') === 'LB'){
+      popUp.innerHTML = '';
+      newArray = getData.filter((element) => element.position === 'LB');
+      newArray.forEach(player => {
+            
+         let newCard = document.createElement('div'); 
+         newCard.classList.add('player-card'); 
+         console.log(newCard);
+   
+         newCard.innerHTML = `
+           <div class="rate">${player.rate}</div>
+           <div class="position">${player.position}</div>
+           <div class="player-photo">
+             <img src="${player.photo}"" alt="" />
+           </div>
+           <div class="player-name">${player.name}</div>
+           <div class="statistique">
+             <div class="stat">${player.stats.PAC} <span>DIV</span></div>
+             <div class="stat">${player.stats.SHO} <span>HAN</span></div>
+             <div class="stat">${player.stats.PAS} <span>KIC</span></div>
+             <div class="stat">${player.stats.DRI} <span>REF</span></div>
+             <div class="stat">${player.stats.DEF} <span>SPD</span></div>
+             <div class="stat">${player.stats.PHY} <span>POS</span></div>
+           </div>
+         `;
+         popUp.appendChild(newCard);
+      }) 
+     }
+     else if (card.getAttribute('data-pos') === 'RB'){
+      popUp.innerHTML = '';
+      newArray = getData.filter((element) => element.position === 'RB');
+      newArray.forEach(player => {
+            
+         let newCard = document.createElement('div'); 
+         newCard.classList.add('player-card'); 
+         console.log(newCard);
+   
+         newCard.innerHTML = `
+           <div class="rate">${player.rate}</div>
+           <div class="position">${player.position}</div>
+           <div class="player-photo">
+             <img src="${player.photo}"" alt="" />
+           </div>
+           <div class="player-name">${player.name}</div>
+           <div class="statistique">
+             <div class="stat">${player.stats.PAC} <span>DIV</span></div>
+             <div class="stat">${player.stats.SHO} <span>HAN</span></div>
+             <div class="stat">${player.stats.PAS} <span>KIC</span></div>
+             <div class="stat">${player.stats.DRI} <span>REF</span></div>
+             <div class="stat">${player.stats.DEF} <span>SPD</span></div>
+             <div class="stat">${player.stats.PHY} <span>POS</span></div>
+           </div>
+         `;
+         popUp.appendChild(newCard);
+      }) 
+     }
+     else if (card.getAttribute('data-pos') === 'CM'){
+      popUp.innerHTML = '';
+      newArray = getData.filter((element) => element.position === 'CM');
+      newArray.forEach(player => {
+            
+         let newCard = document.createElement('div'); 
+         newCard.classList.add('player-card'); 
+         console.log(newCard);
+   
+         newCard.innerHTML = `
+           <div class="rate">${player.rate}</div>
+           <div class="position">${player.position}</div>
+           <div class="player-photo">
+             <img src="${player.photo}"" alt="" />
+           </div>
+           <div class="player-name">${player.name}</div>
+           <div class="statistique">
+             <div class="stat">${player.stats.PAC} <span>DIV</span></div>
+             <div class="stat">${player.stats.SHO} <span>HAN</span></div>
+             <div class="stat">${player.stats.PAS} <span>KIC</span></div>
+             <div class="stat">${player.stats.DRI} <span>REF</span></div>
+             <div class="stat">${player.stats.DEF} <span>SPD</span></div>
+             <div class="stat">${player.stats.PHY} <span>POS</span></div>
+           </div>
+         `;
+         popUp.appendChild(newCard);
+      }) 
+     }
+     else if (card.getAttribute('data-pos') === 'LW'){
+      popUp.innerHTML = '';
+      newArray = getData.filter((element) => element.position === 'LW');
+      newArray.forEach(player => {
+            
+         let newCard = document.createElement('div'); 
+         newCard.classList.add('player-card'); 
+         console.log(newCard);
+   
+         newCard.innerHTML = `
+           <div class="rate">${player.rate}</div>
+           <div class="position">${player.position}</div>
+           <div class="player-photo">
+             <img src="${player.photo}"" alt="" />
+           </div>
+           <div class="player-name">${player.name}</div>
+           <div class="statistique">
+             <div class="stat">${player.stats.PAC} <span>DIV</span></div>
+             <div class="stat">${player.stats.SHO} <span>HAN</span></div>
+             <div class="stat">${player.stats.PAS} <span>KIC</span></div>
+             <div class="stat">${player.stats.DRI} <span>REF</span></div>
+             <div class="stat">${player.stats.DEF} <span>SPD</span></div>
+             <div class="stat">${player.stats.PHY} <span>POS</span></div>
+           </div>
+         `;
+         popUp.appendChild(newCard);
+      }) 
+     }
+     else if (card.getAttribute('data-pos') === 'RW'){
+      popUp.innerHTML = '';
+      newArray = getData.filter((element) => element.position === 'RW');
+      newArray.forEach(player => {
+            
+         let newCard = document.createElement('div'); 
+         newCard.classList.add('player-card'); 
+         console.log(newCard);
+   
+         newCard.innerHTML = `
+           <div class="rate">${player.rate}</div>
+           <div class="position">${player.position}</div>
+           <div class="player-photo">
+             <img src="${player.photo}"" alt="" />
+           </div>
+           <div class="player-name">${player.name}</div>
+           <div class="statistique">
+             <div class="stat">${player.stats.PAC} <span>DIV</span></div>
+             <div class="stat">${player.stats.SHO} <span>HAN</span></div>
+             <div class="stat">${player.stats.PAS} <span>KIC</span></div>
+             <div class="stat">${player.stats.DRI} <span>REF</span></div>
+             <div class="stat">${player.stats.DEF} <span>SPD</span></div>
+             <div class="stat">${player.stats.PHY} <span>POS</span></div>
+           </div>
+         `;
+         popUp.appendChild(newCard);
+      }) 
+     }
+     else if (card.getAttribute('data-pos') === 'ST'){
+      popUp.innerHTML = '';
+      newArray = getData.filter((element) => element.position === 'ST');
+      newArray.forEach(player => {
+            
+         let newCard = document.createElement('div'); 
+         newCard.classList.add('player-card'); 
+         console.log(newCard);
+   
+         newCard.innerHTML = `
+           <div class="rate">${player.rate}</div>
+           <div class="position">${player.position}</div>
+           <div class="player-photo">
+             <img src="${player.photo}"" alt="" />
+           </div>
+           <div class="player-name">${player.name}</div>
+           <div class="statistique">
+             <div class="stat">${player.stats.PAC} <span>DIV</span></div>
+             <div class="stat">${player.stats.SHO} <span>HAN</span></div>
+             <div class="stat">${player.stats.PAS} <span>KIC</span></div>
+             <div class="stat">${player.stats.DRI} <span>REF</span></div>
+             <div class="stat">${player.stats.DEF} <span>SPD</span></div>
+             <div class="stat">${player.stats.PHY} <span>POS</span></div>
+           </div>
+         `;
+         popUp.appendChild(newCard);
+      }) 
+     }
+  });
+});
+
 
 let getData = JSON.parse(localStorage.getItem("playersCards"));
-console.log(getData);
+
+
 playersCard.forEach((card , index) => {
 
     if( getData[index].position === 'GK') {
 
       card.innerHTML = `
     <i class="fa-solid fa-xmark iconRemove"></i>
-    <i class="fa-solid fa-rotate-right iconEdit"></i>
+   <i class="fa-regular fa-pen-to-square iconEdit"></i>
       <div class="rate">${getData[index].rate}</div>
       <div class="position">${getData[index].position}</div>
       <div class="player-photo">
@@ -413,7 +655,7 @@ playersCard.forEach((card , index) => {
     else{      
       card.innerHTML = `
        <i class="fa-solid fa-xmark iconRemove"></i>
-       <i class="fa-solid fa-rotate-right iconEdit"></i>
+       <i class="fa-regular fa-pen-to-square iconEdit"></i> 
       <div class="rate">${getData[index].rate}</div>
       <div class="position">${getData[index].position}</div>
       <div class="player-photo">
@@ -535,8 +777,10 @@ let removeIcon = document.querySelectorAll('.iconRemove');
 let editIcon = document.querySelectorAll('.iconEdit')
 deleteBtn.addEventListener('click', () => {
   removeIcon.forEach((icon, index) => {
+  
     icon.classList.toggle('iconRemove');
     icon.addEventListener('click', () => {
+
       // console.log(getData[index]);
       getData.splice(index, 1); 
       localStorage.setItem("playersCards", JSON.stringify(getData));
@@ -546,7 +790,6 @@ deleteBtn.addEventListener('click', () => {
 });
 
 editBtn.addEventListener('click', ()=>{
-
   editIcon.forEach((icon, index) => {
     icon.classList.toggle('iconEdit');
     icon.addEventListener('click', ()=>{
@@ -555,3 +798,4 @@ editBtn.addEventListener('click', ()=>{
     })
 })
 })
+

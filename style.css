@@ -71,6 +71,7 @@ h1 span {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
   border-radius: 4px;
   height: 100%;
+
 }
 .goalkeeper {
   grid-row: 4;
@@ -237,6 +238,17 @@ h1 span {
   justify-content: center;
   align-items: center;
 }
+.popUp{
+  height: 100vh;
+  overflow-y: scroll;
+  width: 30%;
+  background-color: #020d12;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 50px;
+}
 form{
     width: 550px;
     text-align: center;
@@ -326,6 +338,7 @@ h2{
     flex-direction: row;
     justify-content: space-around;
     margin: auto ;
+    position: relative;
   }
   .btns-SideBar{
     flex-direction: row;
@@ -481,17 +494,19 @@ h2{
   color: #4c956c;
 
 }
-.fa-solid{
+.fa-solid , .fa-regular{
   position: absolute;
   z-index: 1;
   color: #fff;
   top: -20px;
   left: 34px;
-
 }
-.fa-solid:hover {
+.fa-regular{
+  font-size: small;
+}
+.fa-solid:hover , .fa-regular:hover {
   color: darkred;
-  transform: scale(1.5);
+  transform: scale(1.2);
 }
 .iconRemove, .iconEdit{
   display: none;

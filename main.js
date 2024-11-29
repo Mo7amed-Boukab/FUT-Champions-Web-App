@@ -393,6 +393,7 @@ playersCard.forEach((card , index) => {
 
       card.innerHTML = `
     <i class="fa-solid fa-xmark iconRemove"></i>
+    <i class="fa-solid fa-rotate-right iconEdit"></i>
       <div class="rate">${getData[index].rate}</div>
       <div class="position">${getData[index].position}</div>
       <div class="player-photo">
@@ -412,6 +413,7 @@ playersCard.forEach((card , index) => {
     else{      
       card.innerHTML = `
        <i class="fa-solid fa-xmark iconRemove"></i>
+       <i class="fa-solid fa-rotate-right iconEdit"></i>
       <div class="rate">${getData[index].rate}</div>
       <div class="position">${getData[index].position}</div>
       <div class="player-photo">
@@ -446,6 +448,7 @@ let listPlayerContainer = document.querySelector('.listPlayers-container');
 for (let i = 0; i < allPlayers.length; i++) {
   
   if( allPlayers[i].position === 'GK'){
+    
     let playerCard = document.createElement('div');
     playerCard.classList.add('player-card');
     playerCard.innerHTML = 
@@ -500,28 +503,36 @@ let selectTactic = document.querySelector('.selectTactic');
 let mid2 = document.querySelector('.enter-mid2');
 let right = document.querySelector('.right-wing');
 let atq = document.querySelector('.striker');
+let mid1 = document.querySelector('.enter-mid1');
+let mid3 = document.querySelector('.enter-mid3');
 selectTactic.addEventListener('change', ()=>{
   if( selectTactic.value === 'seconde'){
   
     mid2.style.gridColumn = '2';
     right.style.gridRow = '2';
-    right.style.top = '20px';
+    mid2.style.top = '20px';
+    mid2.style.left = '40px';
+    right.style.right = '40px';
     atq.style.gridColumn = '4';
     atq.style.top = '20px';
-    
   }
   else if( selectTactic.value === 'first'){
     
     mid2.style.gridColumn = '3';
+    mid2.style.left = '0';
+    mid2.style.top = '50px';
     right.style.gridRow = '1';
     right.style.top = '20px';
+    right.style.right = '0';
     atq.style.gridColumn = '3';
+    atq.style.top = '0';
   }
 });
 let deleteBtn = document.querySelector('.delete');
+let editBtn = document.querySelector('.edit');
 let card = document.querySelector('.player-card'); 
 let removeIcon = document.querySelectorAll('.iconRemove'); 
-
+let editIcon = document.querySelectorAll('.iconEdit')
 deleteBtn.addEventListener('click', () => {
   removeIcon.forEach((icon, index) => {
     icon.classList.toggle('iconRemove');
@@ -532,7 +543,15 @@ deleteBtn.addEventListener('click', () => {
       // console.log(getData);
     }) 
   })
-
-  
-
 });
+
+editBtn.addEventListener('click', ()=>{
+
+  editIcon.forEach((icon, index) => {
+    icon.classList.toggle('iconEdit');
+    icon.addEventListener('click', ()=>{
+      console.log(getData[index]);
+      
+    })
+})
+})

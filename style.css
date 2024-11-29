@@ -493,6 +493,12 @@ h2{
   color: darkred;
   transform: scale(1.5);
 }
-.iconRemove{
+.iconRemove, .iconEdit{
   display: none;
+}
+.fa-rotate-right{
+  position: absolute;
+  z-index: 1;
+  color: #fff;
+  top: -20px;
 }

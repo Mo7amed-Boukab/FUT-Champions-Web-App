@@ -57,7 +57,7 @@ h1 span {
   height: 100vh;
 }
 .stadium {
-  background-image: url("./src/assets/img/stadium_background.webp");
+  background-image: url("./images/stadium_background.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -76,29 +76,35 @@ h1 span {
 .goalkeeper {
   grid-row: 4;
   grid-column: 3;
+  position: relative;
+  bottom: 50px;
 }
 
 .left-back {
   grid-row: 3;
   grid-column: 1;
+  position: relative;
+  bottom: 20px;
 }
 .center-back1 {
   grid-row: 3;
   grid-column: 2;
   position: relative;
-  top: 50px;
+  top: 20px;
 }
 
 .center-back2 {
   grid-row: 3;
   grid-column: 4;
   position: relative;
-  top: 50px;
+  top: 20px;
 }
 
 .right-back {
   grid-row: 3;
   grid-column: 5;
+  position: relative;
+  bottom: 20px;
 }
 
 .enter-mid1 {
@@ -132,7 +138,8 @@ h1 span {
 .striker {
   grid-row: 1;
   grid-column: 3;
-
+  position: relative;
+  bottom: 20px;
 }
 
 .right-wing {
@@ -144,118 +151,105 @@ h1 span {
 
 /* ------------------------------- cards Players -------------------------------- */
 .player-card {
-  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
-  width: 80px;
-  height: 110px;
-  background-color:  #0519235b;
+  width: 90px;
+  height: 120px;
+  background-image: url('./images/card.png');
+  background-size: cover;
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  border-radius: 5px;
-  padding: 2px;
-  position: relative;
-  transition: transform 0.5s ease;
+  transition: 0.5s ease;
 }
-
 .player-card:hover {
   transform: scale(1.2);
-  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.4);
 }
-.player-card p {
+
+.player{
+  display: flex;
+  justify-content: space-around;
+}
+.info{
+  margin-top: 18px;
+  margin-left: 14px;
+  text-align: center;
+}
+.rating {
   font-size: 12px;
-  color: #fdfffc;
-}
-.player-card img {
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
-  background-color: #fdfffc;
-}
-.rate {
-  font-size: 9px;
-  font-weight: 700;
-  color: rgba(255, 255, 255, 0.8);
-  position: absolute;
-  top: 3px;
-  left: 3px;
+  font-weight: 600;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .position {
-  font-size: 9px;
-  font-weight: 700;
-  color: rgba(255, 255, 255, 0.8);
-  position: absolute;
-  top: 3px;
-  right: 3px;
+  font-size: 7px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.7);
 }
 
-.player-photo img {
+.flag,
+.club {
+  width: 14px;
+}
+.club img{
+  object-fit: cover;
+  width: 100%;
+}
+
+.player-photo {
   width: 50px;
-  height: 50px;
-  background-color: #0519234e;
-  border-radius: 50%;
-  margin-top: 3px;
+  margin-top: 15px;
+  margin-right: 10px;
+}
+.player-photo img{
+  object-fit: cover;
+  width: 100%;
 }
 
 .player-name {
   font-size: 8px;
-  font-weight: 700;
-  color: #fff;
-  margin-bottom: 3px;
+  font-weight: 600;
+  line-height: 5px;
+  margin-bottom: 2px;
+  color: #222;
 }
 
-.statistique {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2px;
-}
-
-.stat {
-  font-size: 6px;
-  font-weight: 700;
-  background: rgba(62, 91, 110, 0.5);
-  color: #fff;
-  padding: 1.5px;
-  border-radius: 2px;
-}
-
-.stat span {
-  font-size: 5px;
-  font-weight: 500;
-  color: #d5f2e3;
-}
-
-.form-container{
-  width: 100vw;
-  height: 100vh;
-  background-image: url('/src/assets/img/football-stadium.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-color: rgba(0, 0, 0, 0.2);
-  background-blend-mode: darken;
+.stats {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-wrap: wrap;
+  padding-left: 5px;
+  font-weight: 600;
 }
-.popUp{
-  height: 100vh;
-  overflow-y: scroll;
+
+.stats div {
+  width: 45%;
+  font-size: 7px;
+  margin-top: 2.5px;
+  color: rgba(255, 255, 255, 0.4);
+}
+.stats div span{
+  color: #333;
+  font-size: 7px;
+}
+.popUp{ 
   width: 30%;
+  height: 100vh;
   background-color: #020d12;
   display: none;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 20px;
-  padding: 50px;
+  padding: 80px 20px;
+  overflow-y: auto;
 }
 form{
-    width: 550px;
+    width: 50%;
     text-align: center;
     padding: 20px 10px;
     border-radius: 10px;
-    background-color: rgba(2, 13, 18, 0.8);
+    background-color: rgba(255, 255, 255, 0.9);
     box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+    position: absolute;
+    top: 5%;
+    left: 25%;
 }
 
 #pos{
@@ -263,7 +257,7 @@ form{
     height: 38px;
     padding: 5px 10px;
     border-radius: 4px;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.1);
     color: #666;
     border: none;
     box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
@@ -271,16 +265,16 @@ form{
 }
 .input-container {
     width: 85%;
-    margin: 20px auto;
+    margin: 10px auto;
     border-radius: 4px;
     display: flex;
-    gap: 15px;
+    gap: 10px;
   }
   
 .input-container input {
-    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
-    background-color: rgba(0, 0, 0, 0.4);
-    color: #fff;
+    box-shadow: 0 4px 6px rgba(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.1);
+    color: #555;
     width: 100%;
     height: 40px;
     padding: 5px 10px;
@@ -334,7 +328,7 @@ h2{
   }
   aside {
     width: 100%;
-    height: 15vh;
+    height: 20vh;
     flex-direction: row;
     justify-content: space-around;
     margin: auto ;
@@ -342,7 +336,6 @@ h2{
   }
   .btns-SideBar{
     flex-direction: row;
-    width: 70%;
     align-items: center;
   }
   h1{
@@ -354,28 +347,12 @@ h2{
     height: 100vh;
     margin: 0 auto;
  }
- /* ------------------------- */
- .player-card {
-  width: 70px;
-  height: 100px;
-}
-.rate, .position {
-  font-size: 8px;
-}
-.player-photo img {
-  width: 40px;
-  height: 40px;
-}
-.player-name {
-  font-size: 7px;
-}
-.stat {
-  font-size: 5px;
-}
-.stat span {
-  font-size: 4px;
-}
- /* ------------------------- */
+ .popUp{
+  flex-direction: row;
+  width: 100%;
+  height: 20vh;
+ }
+
 }
 @media (max-width: 768px) {
   aside {
@@ -385,6 +362,9 @@ h2{
     width: 100vw;
     height: 15vh;
     margin: 0;
+  }
+  .stadium {
+   width: 100vw;
   }
   h1 {
     font-size: 1.8rem;
@@ -402,34 +382,28 @@ h2{
     font-size: 0.6rem;
   }
    /* ------------------------- */
-  .player-card {
-    width: 70px; 
-    height: 90px;
-  }
-  .player-card p {
+  .rating {
     font-size: 10px;
   }
-  .main-container{
-    width: 100%;
-    height: 85vh;
- }
- .player-card {
-  width: 60px;
-  height: 90px;
-}
-  .rate, .position {
-    font-size: 7px;
-  }
-  .player-photo img {
-    width: 35px;
-    height: 35px;
-  }
-  .player-name {
+  
+  .position {
     font-size: 6px;
   }
-  .stat {
-    font-size: 5px;
+  
+  .flag,
+  .club {
+    width: 10px;
   }
+  
+  .stats div {
+    width: 47%;
+    font-size: 6px;
+    margin-top: 2px;
+  }
+  .stats div span{
+    font-size: 6px;
+  }
+
  /* ------------------------- */
 }
 
@@ -442,78 +416,62 @@ h2{
     height: 24px;
     font-size: 0.5rem;
   }
-  .player-card {
-    width: 55px; 
-    height: 85px;
-  }
-  .rate, .position {
-    font-size: 6px;
-  }
-  .stat {
-    font-size: 4px;
-  }
-  .stat span {
-    font-size: 3px;
-  }
+
+
   /* ------------------------------ */
 }
 
 .listPlayersPage{
   width: 100vw;
-  height: 100vh;
-  background-image: url('/src/assets/img/football-stadium.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-color: rgba(0, 0, 0, 0.2);
-  background-blend-mode: darken;
-  display: flex;
+  background-color: #000;
+  display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 .listPlayers-container{
-  width: 60%;
+  width: 80%;
   min-height: 400px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 20px;
-  padding: 20px;
-  border-radius: 10px;
-  background-color: rgba(2, 13, 18, 0.8);
-  box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+  gap: 60px;
+  padding: 50px;
+  background-color: #020d12;
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2);
 }
 .title{
   font-size: 3em;
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: 2px;
-  margin-bottom: 20px;
+  margin: 30px;
   color: #4c956c;
 
 }
-.fa-solid , .fa-regular{
+.display{
+  display: flex;
+}
+.iconRemove{
   position: absolute;
   z-index: 1;
-  color: #fff;
-  top: -20px;
-  left: 34px;
+  color: #606c38;
+  top: 0px;
+  left: 5px;
+  font-size: 12px;
 }
-.fa-regular{
-  font-size: small;
-}
-.fa-solid:hover , .fa-regular:hover {
-  color: darkred;
-  transform: scale(1.2);
-}
-.iconRemove, .iconEdit{
-  display: none;
-}
-.fa-rotate-right{
+.iconEdit{
   position: absolute;
   z-index: 1;
-  color: #fff;
-  top: -20px;
+  color: #606c38;
+  top: 0px;
+  right: 5px;
+  font-size: 12px;
 }
+.iconRemove:hover{
+  color: #780000;
+}
+.iconEdit:hover{
+  color: #4c956c;
+} 

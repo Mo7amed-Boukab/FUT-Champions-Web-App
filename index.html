@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  </head>
     <link rel="stylesheet" href="style.css" />
     <title>FUT APP</title>
   </head>
@@ -14,36 +15,37 @@
         <main class="stadium">
           
         
-          <div class="player-card goalkeeper" data-pos="GK">
+          <div class="player-card goalkeeper " data-pos="GK">
             
       
           </div>
-          <div class="player-card center-back1" data-pos="CB">
+          <div class="player-card center-back1 " data-pos="CB">
           
           </div>
-          <div class="player-card center-back2" data-pos="CB">
+
+          <div class="player-card center-back2 " data-pos="CB">
           
           </div>
   
-          <div class="player-card left-back" data-pos="LB">
+          <div class="player-card left-back " data-pos="LB">
           
           </div>
-          <div class="player-card right-back" data-pos="RB">
+          <div class="player-card right-back " data-pos="RB">
           
           </div>
-          <div class="player-card enter-mid1" data-pos="CM">
+          <div class="player-card enter-mid1 " data-pos="CM">
           
           </div>
-          <div class="player-card enter-mid2" data-pos="CM">
+          <div class="player-card enter-mid2 " data-pos="CM">
             
           </div>
-          <div class="player-card enter-mid3" data-pos="CM">
+          <div class="player-card enter-mid3 " data-pos="CM">
           
           </div>
           <div class="player-card left-wing " data-pos="LW">
           
           </div>
-          <div class="player-card right-wing" data-pos="RW">
+          <div class="player-card right-wing " data-pos="RW">
           
           </div>
           <div class="player-card striker " data-pos="ST">
@@ -52,17 +54,18 @@
           
         </main>
       </div>
-      <div class="popUp">  
-        <button></button>
+      <div class="popUp" id="popup">
+        <div class="popUpList">
+
+        </div>
       </div>
+    
       <aside>
         <h1><span>EA</span> FC 25</h1>      
       
         <div class="btns-SideBar">
 
           <button class="btn add" >Add player</button>
-          <button class="btn edit">Edit</button>
-          <button class="btn delete">Remove</button>
           <button class="btn listPlayers">List Players</button>
           <select class="btn selectTactic" style="text-align: center;">
             <option  disabled selected>Tactic</option>
@@ -81,17 +84,22 @@
         <div class="input-container">
           <input type="text" placeholder="Player name" id="playerName" />  
         </div>
-  
+        <div class="input-container">
+            <input type="text" placeholder="Player Image ( URL )" id="PlayerImage"/>
+        </div>
+        <div class="input-container">
+            <input type="text" placeholder="Nationality Flag ( URL )" id="Flag"/>
+        </div>
+        <div class="input-container">
+            <input type="text" placeholder="Club Logo ( URL )" id="Club"/>
+        </div>
         <div class="input-container">
           <select  id="pos">
             <option  disabled selected>Position</option>
             <option value="GK">GK</option>
             <option value="CB">CB</option>
-            <option value="CB">CB</option>
             <option value="LB">LB</option>
             <option value="RB">RB</option>
-            <option value="CM">CM</option>
-            <option value="CM">CM</option>
             <option value="CM">CM</option>
             <option value="LW">LW</option>
             <option value="RW">RW</option>
@@ -100,14 +108,9 @@
         </div>
         <div id="containerOptions">    
         </div>
-    
         <div class="input-container">
-            <input type="number" placeholder="Rating" id="Rating"/>
-        </div>
-        <div class="input-container">
-            <input type="text" placeholder="Player image ( URL )" id="playerImage"/>
-        </div>
-   
+          <input type="number" placeholder="Rating" id="Rating"/>
+      </div>
         <div class="button-container">
           <button id="addPlayerBtn"> Add Player </button>
         </div>
@@ -116,13 +119,11 @@
     <div class="listPlayersPage">
       <p class="title">Players List</p>
       <div class="listPlayers-container">
-      
-          
+            
       </div>
     </div>
   
-  
-    
+    <script src="data.js"></script>
     <script src="main.js">
     </script>
   </body>

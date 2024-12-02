@@ -229,7 +229,7 @@ h1 span {
   font-size: 7px;
 }
 .popUp{ 
-  width: 30%;
+  width: 28%;
   height: 100vh;
   background-color: #020d12;
   display: none;
@@ -238,7 +238,19 @@ h1 span {
   justify-content: center;
   gap: 20px;
   padding: 80px 20px;
-  overflow-y: auto;
+}
+#back{
+  height: 50px;
+}
+.back{
+  height: 100vh;
+  width: 1.5%;
+  display: none;
+  align-items: center;
+  background-color: #020d12;
+}
+.back i{
+  font-size: 24px;
 }
 form{
     width: 50%;
@@ -350,8 +362,15 @@ h2{
  .popUp{
   flex-direction: row;
   width: 100%;
-  height: 20vh;
+  height: 18vh;
  }
+ .back{
+   position: absolute;
+   left: 0;
+   top: 0;
+   height: 20vh;
+}
+
 
 }
 @media (max-width: 768px) {
@@ -404,7 +423,6 @@ h2{
     font-size: 6px;
   }
 
- /* ------------------------- */
 }
 
 /*------------------------------------- Responsive max-width: 480px */

@@ -24,16 +24,17 @@ function formInputPosition(positionSelected){
       `
         <div id="GK">
                 <div class="input-container">
-                    <input type="number" placeholder="Diving"   id="Diving"/>
-                    <input type="number" placeholder="Handling" id="Handling" />
-                    <input type="number" placeholder="Kicking" id="Kicking" />
+                    <input type="number" placeholder="Diving"   id="Diving" required min="1" max="100"/>
+                    <input type="number" placeholder="Handling" id="Handling" required min="1" max="100"/>
+                    <input type="number" placeholder="Kicking" id="Kicking" required min="1" max="100"/>
                 </div>
           
               <div class="input-container">
-                    <input type="number" placeholder="Reflexes" id="Reflexes"/>
-                    <input type="number" placeholder="Speed" id="Speed" />
-                    <input type="number" placeholder="Positioning" id="Positioning" />
+                    <input type="number" placeholder="Reflexes" id="Reflexes" required min="1" max="100"/>
+                    <input type="number" placeholder="Speed" id="Speed" required min="1" max="100"/>
+                    <input type="number" placeholder="Positioning" id="Positioning" required min="1" max="100"/>
               </div>
+  
        </div>      
       `
     }
@@ -42,17 +43,18 @@ function formInputPosition(positionSelected){
       `
         <div id="PL">
             <div class="input-container">
-                <input type="number" placeholder="Pace"   id="Pace"/>
-                <input type="number" placeholder="Shooting" id="Shooting" />
-                      <input type="number" placeholder="Passing" id="Passing"/>
+                <input type="number" placeholder="Pace"   id="Pace" required min="1" max="100"/>
+                <input type="number" placeholder="Shooting" id="Shooting" required min="1" max="100" />
+                      <input type="number" placeholder="Passing" id="Passing" required min="1" max="100"/>
            </div>
 
           <div class="input-container">
-                <input type="number" placeholder="Dribbling" id="Dribbling" />
-                  <input type="number" placeholder="Defense" id="Defense" />
-                <input type="number" placeholder="Physical" id="Physical" />
+                <input type="number" placeholder="Dribbling" id="Dribbling" required min="1" max="100" />
+                  <input type="number" placeholder="Defense" id="Defense" required min="1" max="100" />
+                <input type="number" placeholder="Physical" id="Physical" required min="1" max="100" />
           </div>
-       </div>      
+       </div>    
+  
       `  
     }
 })
@@ -62,6 +64,7 @@ function formInputPosition(positionSelected){
 // ----------------------------------------------------- pass position choice to our function
 let selectPosition = document.getElementById('pos');
 formInputPosition(selectPosition);
+
 // ----------------------------------------------------------------------------
 function editPlayerInfo(indexPlayer){
   let getData = JSON.parse(localStorage.getItem("playersCards"));
@@ -88,7 +91,6 @@ function editPlayerInfo(indexPlayer){
     // ----------------------------------------------------------
     let Rating = document.getElementById('Rating').value;
     // -------------------------------------------------------------------
-
     if (Position === 'GK') {
       
          getData[indexPlayer] = {
@@ -126,6 +128,7 @@ function editPlayerInfo(indexPlayer){
           }
         }; 
     }
+    
     localStorage.setItem('playersCards',JSON.stringify(getData) );
 }
 
@@ -175,8 +178,8 @@ function addPlayerInfo(){
             }
         }  
         getData.push(newData);
-    
-    } else {
+    } 
+    else {
         let newData = {
           name: Name,
           photo: Image,
@@ -193,7 +196,7 @@ function addPlayerInfo(){
             PHY: Physical
           }
         };
-        getData.push(newData);    
+        getData.push(newData);         
     }
     localStorage.setItem('playersCards',JSON.stringify(getData) );
 }
@@ -210,13 +213,16 @@ let Edit = false;
       
   });
 
-//  ---------------------------------------------------------------------------------------
 // -------------------------------------------------------- list card players in studium
 let playersCard = document.querySelectorAll('.player-card');
+
 // -------------------------------------------------------
+
+//  ---------------------------------------------------------------------------------------
+
 let aside = document.querySelector('aside');
 let popUp = document.querySelector('.popUp');
-
+let back = document.querySelector('.back');
 // ------------------------------------------------- get players change
 let GK_Array =[];
 let CB_Array =[];
@@ -234,7 +240,12 @@ playersCard.forEach((card,indexSelected) => {
 
     aside.style.display = 'none'; 
     popUp.style.display = 'flex'; 
-   
+    back.style.display = 'flex';
+    back.addEventListener('click',()=>{
+      aside.style.display = 'flex'; 
+      popUp.style.display = 'none';
+      back.style.display = 'none';
+    })
     if (card.getAttribute('data-pos') === 'GK') {
       GK_Array = getData.filter((element) => element.position === 'GK');
       localStorage.setItem('GK_Array',JSON.stringify(GK_Array));
@@ -245,8 +256,6 @@ playersCard.forEach((card,indexSelected) => {
     
         let newCard = document.createElement('div'); 
         newCard.classList.add('player-card'); 
-  
-        
         newCard.innerHTML = `
           <div class="player">
             <div class="info">
@@ -650,7 +659,6 @@ let getData = JSON.parse(localStorage.getItem("playersCards"));
 
 playersCard.forEach((card , index) => {
   
-
     if( getData[index].position === 'GK') {
     
       card.innerHTML = `
@@ -712,6 +720,7 @@ playersCard.forEach((card , index) => {
   `;
 }  
   });
+  
 
 let listPlayers = document.querySelector('.listPlayers');
 let listPlayersPage = document.querySelector('.listPlayersPage');
@@ -843,8 +852,6 @@ let removeIcon = document.querySelectorAll('.iconRemove');
 let editIcon = document.querySelectorAll('.iconEdit')
   removeIcon.forEach((icon, index) => {
     icon.addEventListener('click', () => {
-
-      console.log(getData[index]);
       getData.splice(index, 1); 
       localStorage.setItem("playersCards", JSON.stringify(getData));
       window.location.reload();
@@ -890,8 +897,7 @@ let editIcon = document.querySelectorAll('.iconEdit')
         </div>
       `;
     }
-  
-  
+    
   }
 // --------------------------------------------------------------------------------
   editIcon.forEach((icon, index) => {

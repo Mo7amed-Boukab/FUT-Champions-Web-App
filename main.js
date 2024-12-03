@@ -200,6 +200,8 @@ function addPlayerInfo(){
     }
     localStorage.setItem('playersCards',JSON.stringify(getData) );
 }
+
+
 let Edit = false;
   addPlayerBtn.addEventListener('click', ()=>{
     if(!Edit){
@@ -913,3 +915,52 @@ let editIcon = document.querySelectorAll('.iconEdit')
       });
     })
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+let AllCart = document.querySelectorAll('.player-card');
+let rate = document.querySelectorAll('.rating');
+
+
+AllCart.forEach((card, index )=>{
+    console.log(rate[index].textContent);
+    
+    
+})
+
+
+
+
+
+
+
+
+
+
+
+

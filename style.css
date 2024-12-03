@@ -257,7 +257,7 @@ form{
     text-align: center;
     padding: 20px 10px;
     border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: #ffffffe6;
     box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
     position: absolute;
     top: 5%;
@@ -422,6 +422,9 @@ h2{
   .stats div span{
     font-size: 6px;
   }
+  .stadium{
+    gap: 10px;
+  }
 
 }
 
@@ -434,7 +437,9 @@ h2{
     height: 24px;
     font-size: 0.5rem;
   }
-
+  .stadium{
+    gap: 0;
+  }
 
   /* ------------------------------ */
 }
